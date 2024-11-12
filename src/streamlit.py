@@ -100,13 +100,12 @@ def main():
                 st.warning("Please upload files") #Show warning if no files are uploaded
         
     
-    if prompt := st.chat_input(random.choice(list_of_inputs)):
+    if prompt := st.chat_input("How can i help you?"):
         with st.chat_message("user", avatar= "👨"):
             st.markdown(prompt)
         st.session_state.chat_history.append({"role": "user", "content": prompt})
         with st.chat_message("assistant", avatar="🤖"):
-            response =generate_chat(prompt, model, temperature, session_id)
-            st.write_stream(response)
+            response =st.write_stream(generate_chat(prompt, model, temperature, session_id))
         st.session_state.chat_history.append({"role": "assistant", "content": response})
 
 
