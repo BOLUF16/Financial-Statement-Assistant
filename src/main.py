@@ -3,6 +3,7 @@ from llama_index.llms.groq import Groq
 from llama_index.core import VectorStoreIndex, SimpleDirectoryReader, Settings, ServiceContext, StorageContext
 from llama_index.vector_stores.mongodb import MongoDBAtlasVectorSearch
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from llama_index.core.node_parser import RecursiveTextSplitter
 
 print("----")
 from dotenv import load_dotenv
@@ -22,7 +23,7 @@ models = [
 Settings.embed_model = HuggingFaceEmbedding(
     model_name="BAAI/bge-small-en-v1.5"
 )
-
+Settings.text_splitter = RecursiveTextSplitter(chunk_size=1024, chunk_overlap=50)
 def upload_dir(dir):
 
     from llama_index.core.node_parser import TokenTextSplitter
