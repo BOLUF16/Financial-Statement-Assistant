@@ -30,6 +30,6 @@ for names in log_files_to_create:
     create_folder_and_log_file(folder_name, names)
 
 system_logger = setup_logger(__name__, f'{current_working_directory}/logs/system.log')
-userops_logger = setup_logger("userlogger", f'{current_working_directory}/logs/system.log')
-llmresponse_logger = setup_logger("llmresponselogger", f'{current_working_directory}/logs/system.log')
+userops_logger = setup_logger("userlogger", f'{current_working_directory}/logs/userops.log')
+llmresponse_logger = setup_logger("llmresponselogger", f'{current_working_directory}/logs/llmresponse.log')
 
