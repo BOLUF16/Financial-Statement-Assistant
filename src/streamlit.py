@@ -34,9 +34,9 @@ def upload_files(files):
 def chat_response(func):
    def wrapper(question, model, temperature, session_id):
        response= func(question, model, temperature, session_id)
-       for word in response.split():
-            yield word + " "
-            time.sleep(0.05)
+       for word in response.splitlines():
+            yield word + " \n"
+            time.sleep(0.005)
    return wrapper
 
 # Function to generate chat response by interacting with backend
@@ -106,6 +106,7 @@ def main():
         st.session_state.chat_history.append({"role": "user", "content": prompt})
         with st.chat_message("assistant", avatar="🤖"):
             response =st.write_stream(generate_chat(prompt, model, temperature, session_id))
+
         st.session_state.chat_history.append({"role": "assistant", "content": response})
 
 
