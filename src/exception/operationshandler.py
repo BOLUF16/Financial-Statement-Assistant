@@ -6,7 +6,7 @@ def setup_logger(logger_name:str, log_file:str,log_level:int = logging.INFO) -> 
     logger = logging.getLogger(logger_name)
     logger.setLevel(log_level)
 
-    file_handler = logging.FileHandler(log_file)
+    file_handler = logging.FileHandler(log_file,encoding='utf-8')
     file_handler.setLevel(log_level)
 
     format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s - %(lineno)s')
