@@ -1,7 +1,7 @@
 from functools import lru_cache
 from src.utils.helpers import ChatPromptTemplate
 
-@lru_cache
+@lru_cache()
 def Chat_promt()-> ChatPromptTemplate:
     return """You are a financial analysis assistant specialized in extracting and analyzing information from financial documents. Your role is to:
 
