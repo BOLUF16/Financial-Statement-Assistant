@@ -67,3 +67,8 @@ def Chat_promt()-> ChatPromptTemplate:
                                     - YTD March 2022: 35.9% (N57,182,237,000 / N159,444,503,000)
                                     This shows a decrease of 0.9 percentage points in gross profit margin.
                                     Source: Income Statement, page 2" """
+
+
+@lru_cache()
+def chat_rag_prompt()-> ChatPromptTemplate:
+    return "Answer the question based only on the following context: {context}"
