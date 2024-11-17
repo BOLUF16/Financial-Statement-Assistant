@@ -11,14 +11,7 @@ models = [
     "mixtral-8x7b-32768",
     
 ]
-list_of_inputs = [
-    "How can i help you?",
-    "How can i assist you today?",
-    "What's on your mind?",
-    "Lets get cracking?",
-    "Is there anything i can help with?",
-    "I'm Batman!",
-]
+
 # Backend URLs for file upload and chat generation services
 BACKEND_URL = "http://127.0.0.1:5000" # API for file upload and chat generation
 
