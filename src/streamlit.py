@@ -13,7 +13,7 @@ models = [
 ]
 
 # Backend URLs for file upload and chat generation services
-BACKEND_URL = "http://127.0.0.1:5000" # API for file upload and chat generation
+BACKEND_URL = "https://finfastapidocker-h8hxc2hscbctbvd6.eastus-01.azurewebsites.net" # API for file upload and chat generation
 
 
 # Function to upload files to the backend
