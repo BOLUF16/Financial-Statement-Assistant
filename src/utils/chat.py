@@ -20,12 +20,6 @@ load_dotenv()
 MONGO_URI = os.environ.get("MONGO_URI")
 HF_KEY = os.environ.get("HF_KEY")
 
-class ChatRequest(BaseModel):
-    model: str = Field(..., description="Name of the MOdel")
-    temperature: float = Field(..., ge=0, le=1, description="Temperature level")
-    session_id: str = Field(..., description="Session ID for tracking")
-    question: str = Field(..., description="User's question")
-
 class ChatSettings:
     MONGO_URI: str = MONGO_URI
     HF_KEY: str = HF_KEY
