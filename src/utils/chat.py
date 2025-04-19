@@ -10,8 +10,7 @@ from src.utils.helpers import (
     StrOutputParser,
     Customexception
 )
-from src.utils.prompt import Chat_promt, chat_rag_prompt
-from functools import lru_cache       
+from src.utils.prompt import Chat_promt, chat_rag_prompt  
 from pydantic import BaseModel, Field
 from dotenv import load_dotenv
 import os, sys
@@ -29,14 +28,14 @@ class ChatSettings:
 
 settings = ChatSettings()
 
-@lru_cache()
+
 def get_embeddings():
     return HuggingFaceInferenceAPIEmbeddings(
         api_key=settings.HF_KEY,
         model_name="BAAI/bge-small-en-v1.5"
     )
 
-@lru_cache()
+
 def get_vector_store():
     embeddings = get_embeddings()
     return LangChainMongoDBVectorSearch.from_connection_string(
